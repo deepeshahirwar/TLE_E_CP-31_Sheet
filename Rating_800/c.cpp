@@ -56,45 +56,28 @@ template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i
  
 /*************************** MY CP TAMPLATE END HERE *************************/
 void solution(){
-  ll a,b,l; cin>>a>>b>>l; 
-   ll ta = a, tb = b; 
-   ll x = 1, y= 1; 
-   while(a<l){
-    if(l%a == 0)
-        x++;
-    else 
-    break; 
-    a = a*ta; 
-
-   } 
-
-    while(b<l){
-    if(l%b == 0)
-        y++;
-    else 
-    break; 
-    b = b*tb; 
-    
-   } 
-
-   set<ll> st;
-for (int i = 0; i <= x; i++) {
-    for (int j = 0; j <= y; j++) {
-        ll temp = 1;
-        for (int k = 0; k < i; k++)
-            temp *= ta;
-        for (int k = 0; k < j; k++)
-            temp *= tb;
-
-        if (temp <= l && l % temp == 0) {
-            st.insert(l / temp);
+  ll a,b,l; cin>>a>>b>>l;  
+ set<ll>st;
+  for (int i = 0; i <= 32; i++) {
+            for (int j = 0; j <= 32; j++) {
+                ll temp = 1;
+                for (int k = 0; k < i; k++) {
+                    temp *= a;
+                    if (temp > l) break; 
+                }
+                for (int k = 0; k < j; k++) {
+                    temp *= b;
+                    if (temp > l) break;  
+                }
+                if (temp > l) continue; 
+                ll k = l / temp;
+                if (k * temp == l) {
+                    st.insert(k);
+                }
+            }
         }
-    }
-}
 
-  
-  cout<<st.size()<<endl;
-
+        cout << st.size() << endl;
 } 
 
 int main() {
