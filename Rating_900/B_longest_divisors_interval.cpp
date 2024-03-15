@@ -55,34 +55,33 @@ template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_pr
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
  
 /*************************** MY CP TAMPLATE END HERE *************************/
-void solution(){
-      set<int>st;
-     vector<ll>a = {1,2,3,4,9}; 
-     for( ll i=0; i<a.size(); ++i){
-      cout<<a[i]<<" "; 
-      st.insert(a[i]);
-     }  
-    
+void solution(){ 
+    ll n; cin>>n;
+    ll ans =0;
+    // find max consicutive divisors
+         for(ll i = 1; i<= n; i++) {
+         if (n % i != 0)break; 
+         ans++;
+        }  
+ 
+ cout<<ans<<endl;   
 
-   debug(a); 
-   debug(st);
 } 
 
 int main() {
-#ifndef ONLINE_JUDGE 
+#ifndef ONLINE_JUDGE  
     freopen("Error1.txt", "w", stderr); 
 #endif 
     fastio();  
 
     /********** YOUR CODE START HERE  ***********/
     
-    // ll t; 
-    // cin >> t; 
-    // while(t--) { 
-    //     solution(); 
-    // } 
-    solution();
+    ll t; 
+    cin >> t; 
+    while(t--) { 
+        solution(); 
+    } 
+    //solution();
 
     return 0;
-} 
-
+}
