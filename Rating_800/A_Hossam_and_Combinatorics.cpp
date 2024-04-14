@@ -19,8 +19,8 @@ using namespace std;
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(), (x).end()  
 
-#define sort(x) sort(x.begin(),x.end())
-#define reverse(x) reverse(x.begin(),x.end())
+#define sort_all(x) sort(x.begin(),x.end())
+#define reverse_all(x) reverse(x.begin(),x.end())
 #define py cout<<"YES"<<"\n"
 #define pn cout<<"NO"<<"\n"
 
@@ -56,17 +56,42 @@ template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i
  
 /*************************** MY CP TAMPLATE END HERE *************************/
 void solution(){
-      set<int>st;
-     vector<ll>a = {1,2,3,4,9}; 
-     for( ll i=0; i<a.size(); ++i){
-      cout<<a[i]<<" "; 
-      st.insert(a[i]);
-     }  
-    
+ ll n; cin>>n; 
+   vector<int>a(n);  
+   int mini = INT_MAX; 
+   int maxi = INT_MIN; 
+   for( ll i=0; i<n; ++i){
+    cin>>a[i];  
 
-   debug(a); 
-   debug(st); 
-   cout<<" i am working fine.."<<endl;
+    mini = min(mini , a[i]); 
+    maxi = max(maxi , a[i]);
+   }    
+
+   map<int, int>mp;  
+
+ for(auto it : a)mp[it]++; 
+ int mnf =0, mxf =0; 
+
+ for(auto it : mp){
+    if(it.first == mini){
+        mnf = it.second;
+    } 
+    if(it.first == maxi){
+        mxf = it.second;
+    }
+ } 
+
+ int ans = mxf*mnf*2; 
+
+ if(mini != maxi){
+    cout<<ans<<endl;
+ }else{
+    cout<<n*(n-1)<<endl;
+ }
+
+
+ 
+
 } 
 
 int main() {
@@ -77,13 +102,12 @@ int main() {
 
     /********** YOUR CODE START HERE  ***********/
     
-    // ll t; 
-    // cin >> t; 
-    // while(t--) { 
-    //     solution(); 
-    // } 
-    solution();
+    ll t; 
+    cin >> t; 
+    while(t--) { 
+        solution(); 
+    } 
+    //solution();
 
     return 0;
-} 
-
+}
