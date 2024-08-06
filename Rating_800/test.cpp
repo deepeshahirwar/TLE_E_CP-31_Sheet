@@ -56,22 +56,28 @@ template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i
  
 /*************************** MY CP TAMPLATE END HERE *************************/
 void solution(){
-      set<int>st;
-     vector<ll>a = {1,2,3,4,9}; 
-     for( ll i=0; i<a.size(); ++i){
-      cout<<a[i]<<" "; 
-      st.insert(a[i]);
-     }  
-    
+//       set<int>st;
+//      vector<ll>a = {1,2,10,4,3}; 
+//      for( ll i=0; i<a.size(); ++i){
+//       cout<<a[i]<<" "; 
+//       st.insert(a[i]); 
+//      }  
+//     cout<<endl;
+//    debug(a); 
+//    debug(st); 
+//    cout<<" i am working fine.."<<endl; 
 
-   debug(a); 
-   debug(st); 
-   cout<<" i am working fine.."<<endl;
+  int n; 
+  cin>>n; 
+  cout<<"i am working fine.. "<<n<<endl;
+
+
 } 
 
 int main() {
 #ifndef ONLINE_JUDGE 
-    freopen("Error1.txt", "w", stderr); 
+    freopen("output.txt", "w", stderr); 
+     freopen("input.txt", "r", stderr); 
 #endif 
     fastio();  
 
