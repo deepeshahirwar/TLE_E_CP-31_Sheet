@@ -1,10 +1,11 @@
 /***************************  DEEPESH AHIRWAR *********************************/ 
 
 #include<bits/stdc++.h>
+#include <fstream>
 
 using namespace std; 
 
-#define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+#define fastio() ios_base::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr)
 #define MOD 1000000007
 #define MOD1 998244353
 #define INF 1e18
@@ -56,7 +57,7 @@ template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i
  
 /*************************** MY CP TAMPLATE END HERE *************************/
 void solution(){
-  int n; 
+   int n; 
   cin>>n; 
  int mn = INT_MAX, mx = 0;
   vector<int>a(n); 
@@ -85,11 +86,15 @@ int maxi = 0;
 
 } 
 
+
+
 int main() {
 #ifndef ONLINE_JUDGE 
-    freopen("Error1.txt", "w", stderr); 
+freopen("Error1.txt", "w", stderr); 
+freopen("input.txt", "r", stdin);
+freopen("output.txt", "w", stdout);
 #endif 
-    fastio();  
+ fastio();  
 
     /********** YOUR CODE START HERE  ***********/
     
@@ -102,3 +107,4 @@ int main() {
 
     return 0;
 }
+
